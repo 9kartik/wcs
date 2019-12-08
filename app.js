@@ -1,4 +1,4 @@
-import AppDrawer from './components/drawer.js';
+import cards from './elements/progressBar.js';
 
-customElements.define('app-drawer', AppDrawer);
-
+// drawer.setAttribute('disabled', true);
+customElements.define('progress-card', cards);
