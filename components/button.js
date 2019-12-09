@@ -1,31 +1,32 @@
 class Button extends HTMLElement {
 
     connectedCallback() {
-        this.innerHTML = `<button>${this.btnname}</button>`;
+        this.btn = document.createElement('button');
+        this.btn.innerHTML = this.btnname;
+        this.appendChild(this.btn);
+        if(this.getAttribute('disable') !== null)
+            this.disable();
     }
     set name(name){
         this.btnname = name;
     }
     disable(){
         this.disabled = true;
-        this.setAttribute('disabled','');
+        this.btn.setAttribute('disabled','');
     }
     enable(){
         this.disabled = false;
-        this.removeAttribute('disabled');
+        this.btn.removeAttribute('disabled');
     }
     set meth(methName){
         this.addEventListener('click', function(){
-                methName();
-                this.disable()}
-            );
+                methName.call(this)
+            }
+        );
     }
-    disconnectedCallback() {
-      
-    }
+
     constructor() {
       super();
-      this.disabled = false;
       // Setup a click listener on <app-drawer> itself.
     //   this.addEventListener('click', this.)
     }

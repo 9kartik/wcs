@@ -18,13 +18,14 @@ class Number extends HTMLElement {
       return ['num'];
     }
     attributeChangedCallback(attrName, oldVal, newVal) {
-      // console.log(`${attrName}, o->${oldVal}, n->${newVal}`)
-      this.innerHTML = newVal;
+      this.innerHTML = newVal + ((newVal!='Done!')?'%':'');
     }
   
     constructor() {
       super();
       this.numVal = 0;
+      this.defaultText = 'Click Start';
+      this.finishedText = 'Complete';
     }
   
     toggleDrawer() {
