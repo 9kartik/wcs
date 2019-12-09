@@ -10,6 +10,9 @@ class Button extends HTMLElement {
     set name(name){
         this.btnname = name;
     }
+    changeName(name){
+        this.btn.innerHTML = name;
+    }
     disable(){
         this.disabled = true;
         this.btn.setAttribute('disabled','');

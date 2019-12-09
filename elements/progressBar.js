@@ -84,6 +84,7 @@ class ProgressBar extends HTMLElement {
         this.pauseBtn.meth = this.tickerInit.bind(this, true);
         this.pauseBtn.meth = this.startBtn.enable.bind(this.startBtn);
         this.pauseBtn.meth = this.pauseBtn.disable;
+        this.pauseBtn.meth = this.startBtn.changeName.bind(this.startBtn,'Resume');
         
         this.btnContainer.append(this.startBtn,this.pauseBtn)
         
