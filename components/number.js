@@ -17,8 +17,11 @@ class Number extends HTMLElement {
     static get observedAttributes() {
       return ['num'];
     }
+    set symbol(symbol){
+      this.symb = symbol;
+    }
     attributeChangedCallback(attrName, oldVal, newVal) {
-      this.innerHTML = newVal + ((newVal!='Done!')?'%':'');
+      this.innerHTML = newVal + ' ' + ((newVal!='Done!')?this.symb:'');
     }
   
     constructor() {
