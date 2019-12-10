@@ -18,6 +18,9 @@ class ProgressBar extends HTMLElement {
             border-radius : 0.5em;
             box-shadow : 0.2em 0.3em 0.5em grey;
           }
+          .text-center{
+            text-align: center;
+          }
           .relative{
             height: ${this.size}px;
             position: relative;
@@ -59,13 +62,16 @@ class ProgressBar extends HTMLElement {
         this.tickInit();
         this.fragment = new DocumentFragment();
         this.containerBox = document.createElement('span');
+        this.containerBox.style.background=this.bgcolor;
         this.containerBox.className = 'container';
         this.btnContainer = document.createElement('span');
         this.btnContainer.className = 'btn-container';
+
         this.progBox = document.createElement('span');
         this.progBox.className = 'relative';
         this.progNum = document.createElement('progress-num');
-        this.progNum.className = 'absolute centered'
+        this.progNum.symbol = this.postSym;
+        this.progNum.className = 'absolute centered text-center'
         this.progLdr = document.createElement('progress-loader');
         this.progLdr.className='absolute';
         this.progLdr.size = this.size;
@@ -126,6 +132,8 @@ class ProgressBar extends HTMLElement {
       super();
       this.targetVal = this.getAttribute('target')||100;
       this.size = this.getAttribute('size')||200;
+      this.postSym = this.getAttribute('postSym');
+      this.bgcolor = this.getAttribute('background');
       this.finished = false;
     }
   
