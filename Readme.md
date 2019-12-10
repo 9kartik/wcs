@@ -3,10 +3,10 @@
 
 As explained above in the diagrams.
 
-Progress-card is the main exposed component through progress-bar.js which is offered in various sizes and an optional value of the final progress (Lets say you want to have number of files instead of percent of transfer)
+Progress-card is the main exposed component through progress-bar.js which is offered in various sizes and an optional value of the final progress (Lets say you want to have number of files instead of percent of transfer). Additionally you have post symbol for progress and background for the progress-card element.
 
 can be used as
-<progress-card target=“#final value#” size=“#card size#”></progress-card> 
+<progress-card target=“#final value#” size=“#card_size#” postSym="#success_text#" background="#color_name#"></progress-card> 
 
 It uses various components like number, loader(inherited from number), n-btn.
 All of which are inherited from HTMLElement API.
